@@ -249,8 +249,76 @@ var conversationFlow = [
       },
       {
         type: 'bot',
-        delay: 1500,
-        content: '<b>{userName}</b>, excelente escolha! Seu prêmio foi <b>reservado!</b>'
+        delay: 1600,
+        content: 'Antes de prosseguirmos com <b>sua premiação</b>, veja o que <b>algumas pessoas</b> nos mandam diariamente 🥰 ',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<iframe id="embed-bubble-content" class="w-full h-full " src="https://www.youtube-nocookie.com/embed/v6iCFyNdjrI?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;showinfo=0&amp;modestbranding=0&amp;rel=0&amp;loop=0&amp;fs=0&amp;widget_referrer=https%3A%2F%2Fatendimentoprivado.com%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fiframe.vslplay.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Fiframe.vslplay.com%2F6b899dde-e319-46e4-b5b6-03d4c200c39b&amp;aoriginsup=1&amp;aorigins=https%3A%2F%2Fatendimentoprivado.com%2Chttps%3A%2F%2Fatendimentoprivado.com&amp;gporigin=https%3A%2F%2Fatendimentoprivado.com%2F&amp;vf=1"></iframe>',
+        type_text: 'video'
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '{userName}, por que você gostaria de ganhar o <b>{produtoEscolhido}</b> ?',
+        input: true
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<i>Aguarde alguns segundos enquanto eu verifico suas respostas... </i>',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '✅ <b>Respostas verificadas!</b>',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '🎉 Parabéns! Você está qualificada para ganhar  <b>{produtoEscolhido}</b>!',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'De acordo com as regras do nosso questionário premiado, os <b>{produtoEscolhido}</b> sairá por R$0,00. ',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Isso mesmo, o aniversário é nosso e quem ganha é você!',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<b>Agora escreva abaixo suas cores preferidas. Exemplo:</b> Branco, cor claro ou escuro, rosa, etc. <br><b>Escreva com detalhes:</b> ',
+        input: true
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '✅ Perfeito, {userName}!<br><b>Recebemos suas preferências com sucesso!</b><br>Agora nosso time está preparando uma seleção <b>exclusiva só pra você</b> – com  100% do seu gosto. 💖',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Lembre-se que hoje é o <b>último dia</b> para <b>resgatar seu prêmio</b>, e caso você <b>não conclua a etapa a seguir</b> seu prêmio será <b>expirado</b> e dará oportunidade para outro participante. ',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Você será <b>redirecionada</b> para uma <b>página onde deverá preencher suas informações de contato.</b><br>Em seguida, entrarei em <b>contato pessoalmente</b> com você para <b>confirmar as escolhas das roupas e o endereço de entrega<b>, além de alinhar os <b>detalhes do pagamento do frete</b> no prazo que preferir.',
+
       },
       {
         type: 'bot',
