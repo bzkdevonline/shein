@@ -68,66 +68,18 @@
  * O foco é forçar um design compacto, especialmente no iOS/Safari (WebKit).
  */
 
-/* 1. Ajuste na bolha para que ela se ajuste ao conteúdo */
-.message.bot .bubble {
-    /* Usa display: inline-flex para que a bolha se ajuste ao tamanho do conteúdo */
-    display: inline-flex; 
-    /* Garante que a bolha não ocupe a largura total */
-    max-width: fit-content;
-    /* Adiciona um pequeno arredondamento para o canto do lado do avatar */
-    border-radius: 18px;
-    /* Garante que o padding não seja a causa do espaço em branco */
-    padding: 10px; 
-}
 
-/* 2. Estilo para o elemento de áudio em si (alvo principal) */
-.compact-audio-player {
-    /* Remove margens e paddings indesejados */
-    margin: 0 !important; 
-    padding: 0 !important;
-    /* Força um tamanho compacto */
-    width: 170px !important; 
-    height: 40px !important; 
-    display: block;
-    /* Tenta forçar o layout compacto do iOS */
-    -webkit-appearance: none; 
-    appearance: none;
-}
+/*
+ * CSS Final Combinado para Links de Frete e Player de Áudio Compacto
+ * Deve ser usado em conjunto com o JavaScript corrigido (pasted_content.txt).
+ */
 
-/* 3. Estilo específico para o painel de controle no WebKit (Safari/iOS) */
-.compact-audio-player::-webkit-media-controls-panel {
-    /* Tenta forçar o painel de controle a ser mais compacto */
-    width: 100%;
-    min-width: 170px;
-    max-width: 170px;
-    background-color: transparent; /* Remove o fundo do painel de controle se houver */
-    /* Garante que o painel use o espaço de forma eficiente */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
+/*
+ * CSS Final Combinado para Links de Frete e Player de Áudio Compacto
+ * Deve ser usado em conjunto com o JavaScript corrigido (pasted_content.txt).
+ */
 
-/* 4. Estilo para o botão de play no WebKit */
-.compact-audio-player::-webkit-media-controls-play-button {
-    /* Garante que o botão de play não seja muito grande */
-    margin-right: 5px;
-}
 
-/* 5. Estilo para a barra de progresso no WebKit */
-.compact-audio-player::-webkit-media-controls-timeline {
-    /* Garante que a barra de progresso ocupe o espaço restante */
-    flex-grow: 1;
-}
-
-/* 6. Estilo para o tempo de áudio no WebKit */
-.compact-audio-player::-webkit-media-controls-current-time-display,
-.compact-audio-player::-webkit-media-controls-time-remaining-display {
-    /* Oculta o tempo restante, se necessário, para economizar espaço */
-    /* display: none; */
-    font-size: 12px;
-    margin: 0 5px;
-}
 
 
 
