@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script
+  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+  data-utmify-prevent-xcod-sck
+  data-utmify-prevent-subids
+  async
+  defer
+></script>
+
+
+<script>
+  window.pixelId = "68f7b664aa20c2547dc019ef";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARTICIPE AGORA - QUESTIONÁRIO PREMIADO</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:4,6,700&display=swap" rel="stylesheet">
+      <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /*
+ * Estilos para o chat (Versão 2 - Correção da Bolha)
+ * NOTA: Este arquivo é uma sugestão de como o CSS deve ser ajustado.
+ * O usuário deve garantir que estes estilos sejam adicionados ao seu arquivo CSS principal.
+ */
+
+/* 1. Estilo para o container da mensagem de link de largura total */
+.message.full-width-link {
+    /* Remove o alinhamento padrão da bolha do bot (que alinha à esquerda) */
+    display: flex;
+    justify-content: flex-start; /* Mantém o alinhamento do avatar */
+    margin-bottom: 10px; /* Espaçamento entre mensagens */
+}
+
+/* 2. Estilo para o conteúdo dentro do container de link de largura total */
+.message.full-width-link .full-content {
+    /* Garante que o conteúdo ocupe o espaço necessário */
+    max-width: 100%;
+    /* Remove qualquer margem ou padding que possa estar sendo herdado */
+    padding: 0;
+    margin: 0;
+    /* O link em si (<a>) deve ter as classes w-full e as cores/padding/border-radius */
+}
+
+/* 3. Ajuste para o avatar em mensagens de link de largura total */
+.message.full-width-link .avatar-bubble {
+    /* Mantém o avatar no lugar, mas garante que ele não interfira no alinhamento do link */
+    margin-right: 10px;
+}
+
+/*
+ * CSS Final para o Player de Áudio Compacto
+ * Deve ser usado em conjunto com a modificação JavaScript que injeta a classe 'compact-audio-player'.
+ * O foco é forçar um design compacto, especialmente no iOS/Safari (WebKit).
+ */
+
+
+
+/* 2. Estilo para o elemento de áudio em si (alvo principal) */
+.compact-audio-player {
+    /* Remove margens e paddings indesejados */
+    margin: 0 !important; 
+    padding: 0 !important;
+    /* Força um tamanho compacto */
+    width: 170px !important; 
+    height: 40px !important; 
+    display: block;
+    /* Tenta forçar o layout compacto do iOS */
+    -webkit-appearance: none; 
+    appearance: none;
+}
+
+/* 3. Estilo específico para o painel de controle no WebKit (Safari/iOS) */
+.compact-audio-player::-webkit-media-controls-panel {
+    /* Tenta forçar o painel de controle a ser mais compacto */
+    width: 100%;
+    min-width: 170px;
+    max-width: 170px;
+    background-color: transparent; /* Remove o fundo do painel de controle se houver */
+    /* Garante que o painel use o espaço de forma eficiente */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* 4. Estilo para o botão de play no WebKit */
+.compact-audio-player::-webkit-media-controls-play-button {
+    /* Garante que o botão de play não seja muito grande */
+    margin-right: 5px;
+}
+
+/* 5. Estilo para a barra de progresso no WebKit */
+.compact-audio-player::-webkit-media-controls-timeline {
+    /* Garante que a barra de progresso ocupe o espaço restante */
+    flex-grow: 1;
+}
+
+/* 6. Estilo para o tempo de áudio no WebKit */
+.compact-audio-player::-webkit-media-controls-current-time-display,
+.compact-audio-player::-webkit-media-controls-time-remaining-display {
+    /* Oculta o tempo restante, se necessário, para economizar espaço */
+    /* display: none; */
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: url('https://cdn.jsdelivr.net/gh/packtypebot/free-template-packtypebot/background-light.png');
+      background-size: cover;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header WhatsApp Style */
+    .user-bar {
+      width: 100%;
+      height: 55px;
+      background: #075e54;
+      color: #fff;
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .user-bar .left-section {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-bar .back i {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .user-bar .avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    .user-bar .avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      background: white;
+    }
+
+    .user-bar .info .name {
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .user-bar .info .status {
+      font-size: 13px;
+      color: #cfcfcf;
+    }
+
+    .user-bar .actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .user-bar .actions i {
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* Chat Container */
+    .chat-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 160px;
+    }
+
+    /* Info Message */
+    .info-message {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #d5f4f0;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 0 auto 10px;
+      max-width: 90%;
+      font-size: 14px;
+      color: #53676b;
+    }
+
+    .info-message svg {
+      flex-shrink: 0;
+    }
+
+    /* Message Bubble */
+    .message {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      animation: fadeIn 0.3s ease-in;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .message.bot {
+      flex-direction: row;
+    }
+
+    .message.user {
+      justify-content: flex-end;
+      margin-left: 50px;
+      flex-wrap: wrap;
+    }
+
+    .avatar-bubble {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    .avatar-bubble img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .bubble {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 8px;
+      position: relative;
+      word-wrap: break-word;
+    }
+
+    .message.bot .bubble {
+      background: white;
+      color: #303235;
+      border-radius: 0 8px 8px 8px;
+    }
+
+    .message.user .bubble {
+      background: #dcf8c6;
+      color: #000;
+      border-radius: 8px 0 8px 8px;
+    }
+
+    .bubble img {
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .bubble.typing {
+      background: white;
+      padding: 15px 20px;
+    }
+
+    /* Typing Animation */
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .typing-indicator span {
+      width: 8px;
+      height: 8px;
+      background: #90949c;
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .typing-indicator span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    @keyframes typing {
+      0%, 60%, 100% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Buttons */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 5px;
+    }
+
+    .chat-button {
+      color: white;
+      background: #598E71;
+      border: 1px solid #e0e0e0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: left;
+      font-size: 14px;
+      transition: all 0.2s;
+    }
+
+    .chat-button:hover {
+      background: #f5f5f5;
+    }
+
+    .chat-button.selected {
+      background: #598E71;
+      border-color: #dcf8c6;
+    }
+
+
+    /* Input */
+    .input-container {
+      padding: 10px;
+      border-top: 1px solid #e0e0e0;
+    }
+
+
+    /* Verified Badge */
+    .verified-badge {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .chat-container::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-container::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .chat-container::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 3px;
+    }
+
+    .chat-container::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+
+    /* Bold text */
+    .bold {
+      font-weight: 700;
+    }
+
+    /* Hidden class */
+    .hidden {
+      display: none !important;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header WhatsApp -->
+  <div class="user-bar">
+    <div class="left-section">
+      <div class="avatar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkAjqAnSbh7A5TKwE4UufKtxh1zCYZ_a_sHAXr6c_cGi_lHHchBirLNShrl1hsmB6w4sQ&usqp=CAU" alt="Shein Brasil">
+      </div>
+      <div class="info">
+        <div class="name">
+          Shein Brasil
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" style="width: 16px; vertical-align: middle;">
+        </div>
+        <div class="status" id="status">Online</div>
+      </div>
+    </div>
+<div class="actions">
+      <!-- Ícones simulando câmera e telefone -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="white" viewBox="0 0 24 24"><path d="M20 15.5c-.828 0-1.578-.336-2.121-.879l-2.621-2.621a1 1 0 0 0-1.415 1.415l2.621 2.621c1.172 1.172 3.07 1.172 4.242 0a2.992 2.992 0 0 0 0-4.242l-2.621-2.621a1 1 0 0 0-1.415 1.415l2.621 2.621c.543.543.879 1.293.879 2.121s-.336 1.578-.879 2.121z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="white" viewBox="0 0 24 24"><path d="M18 3H6a2 2 0 0 0-2 2v14l4-4h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"></path></svg>
+    </div>
+  </div>
+
+  <!-- Chat Container -->
+  <div class="chat-container" id="chatContainer">
+    <!-- Info Message -->
+    <div class="info-message">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#4b5e63" fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM12 17.75C12.4142 17.75 12.75 17.4142 12.75 17V11C12.75 10.5858 12.4142 10.25 12 10.25C11.5858 10.25 11.25 10.5858 11.25 11V17C11.25 17.4142 11.5858 17.75 12 17.75ZM12 7C12.5523 7 13 7.44772 13 8C13 8.55228 12.5523 9 12 9C11.4477 9 11 8.55228 11 8C11 7.44772 11.4477 7 12 7Z"/>
+      </svg>
+      <p>Esta é uma conta comercial</p>
+    </div>
+  </div>
+
+  <!-- Audio notification -->
+  <audio id="notificationSound" src="https://cdn.jsdelivr.net/gh/packtypebot/free-template-packtypebot/audio.mp3"></audio>
+
+  <script src="js.js"></script>
+
+</body>
+</html>
