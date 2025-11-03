@@ -69,8 +69,34 @@
  */
 
 
+/*
+ * CSS Final Combinado para Links de Frete e Player de Áudio Compacto
+ * Deve ser usado em conjunto com o JavaScript corrigido (pasted_content.txt).
+ */
 
-/* 2. Estilo para o elemento de áudio em si (alvo principal) */
+/*
+ * CSS Final Combinado para Links de Frete e Player de Áudio Compacto
+ * Deve ser usado em conjunto com o JavaScript corrigido (pasted_content.txt).
+ */
+
+/* 1. Estilo para o container da mensagem de link de largura total OU ÁUDIO */
+.message.full-width-link {
+    /* Remove o alinhamento padrão da bolha do bot (que alinha à esquerda) */
+    display: flex;
+    justify-content: flex-start; /* Mantém o alinhamento do avatar */
+    margin-bottom: 10px; /* Espaçamento entre mensagens */
+}
+
+/* 2. Estilo para o conteúdo que não tem bolha (links e áudio) */
+.message.full-width-link .full-content {
+    /* Garante que o conteúdo ocupe o espaço necessário */
+    max-width: 100%;
+    /* Remove qualquer margem ou padding que possa estar sendo herdado */
+    padding: 0;
+    margin: 0;
+}
+
+/* 3. Estilo para o elemento de áudio em si (alvo principal) */
 .compact-audio-player {
     /* Remove margens e paddings indesejados */
     margin: 0 !important; 
@@ -84,7 +110,7 @@
     appearance: none;
 }
 
-/* 3. Estilo específico para o painel de controle no WebKit (Safari/iOS) */
+/* 4. Estilo específico para o painel de controle no WebKit (Safari/iOS) */
 .compact-audio-player::-webkit-media-controls-panel {
     /* Tenta forçar o painel de controle a ser mais compacto */
     width: 100%;
@@ -98,26 +124,31 @@
     justify-content: flex-start;
 }
 
-/* 4. Estilo para o botão de play no WebKit */
+/* 5. Estilo para o botão de play no WebKit */
 .compact-audio-player::-webkit-media-controls-play-button {
     /* Garante que o botão de play não seja muito grande */
     margin-right: 5px;
 }
 
-/* 5. Estilo para a barra de progresso no WebKit */
+/* 6. Estilo para a barra de progresso no WebKit */
 .compact-audio-player::-webkit-media-controls-timeline {
     /* Garante que a barra de progresso ocupe o espaço restante */
     flex-grow: 1;
 }
 
-/* 6. Estilo para o tempo de áudio no WebKit */
+/* 7. Estilo para o tempo de áudio no WebKit */
 .compact-audio-player::-webkit-media-controls-current-time-display,
 .compact-audio-player::-webkit-media-controls-time-remaining-display {
-    /* Oculta o tempo restante, se necessário, para economizar espaço */
-    /* display: none; */
     font-size: 12px;
     margin: 0 5px;
 }
+
+/* 8. Ajuste para o avatar em mensagens de link/áudio de largura total */
+.message.full-width-link .avatar-bubble {
+    /* Mantém o avatar no lugar, mas garante que ele não interfira no alinhamento do link */
+    margin-right: 10px;
+}
+
 
 
 
