@@ -365,7 +365,7 @@ var conversationFlow = [
       },
       // PASSO (Originalmente 67)
 
-      
+
       {
         type: 'bot',
         delay: 1500,
@@ -518,8 +518,9 @@ function addBotMessage(content, image = null, buttons = null, input = false, typ
   }
 
   const messageDiv = document.createElement('div');
-  // Verifica se o conteúdo é um link de frete (que deve ocupar a largura total e não ter bolha) OU se é um áudio
-  const isFullWidthLink = (content?.includes('<a href=') && content?.includes('w-full')) || (content?.includes('<audio') && content?.includes('controls'));
+  // Verifica se o conteúdo é um link de frete ou um áudio para remover a bolha
+  const isAudio = content?.includes('<audio') && content?.includes('controls');
+  const isFullWidthLink = (content?.includes('<a href=') && content?.includes('w-full')) || isAudio;
 
   // Se for um link de largura total ou áudio, remove a classe 'bot' para evitar estilos de bolha
   messageDiv.className = isFullWidthLink ? 'message full-width-link' : 'message bot';
@@ -543,12 +544,13 @@ function addBotMessage(content, image = null, buttons = null, input = false, typ
     });
   }
 
-  // Se for um link de largura total, o HTML é simplificado para não incluir a bolha
+  // Se for um link de largura total ou áudio, o HTML é simplificado para não incluir a bolha
   if (isFullWidthLink) {
     messageDiv.innerHTML = `
       <div class="avatar-bubble"><img src="${botAvatar}" alt="Bot"></div>
       <div class="full-content">${bubbleContent}</div>`; // Apenas o conteúdo, sem a bolha
   } else {
+    // Para todos os outros casos (incluindo mensagens que pedem input), usa a bolha normal
     messageDiv.innerHTML = `
       <div class="avatar-bubble"><img src="${botAvatar}" alt="Bot"></div>
       <div class="bubble">${bubbleContent}</div>`; // Conteúdo normal com bolha
