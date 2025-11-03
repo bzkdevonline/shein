@@ -256,7 +256,7 @@ var conversationFlow = [
       {
         type: 'bot',
         delay: 1600,
-        content: '<iframe id="embed-bubble-content" class="w-full h-full " src="https://www.youtube-nocookie.com/embed/v6iCFyNdjrI?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;showinfo=0&amp;modestbranding=0&amp;rel=0&amp;loop=0&amp;fs=0&amp;widget_referrer=https%3A%2F%2Fatendimentoprivado.com%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fiframe.vslplay.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Fiframe.vslplay.com%2F6b899dde-e319-46e4-b5b6-03d4c200c39b&amp;aoriginsup=1&amp;aorigins=https%3A%2F%2Fatendimentoprivado.com%2Chttps%3A%2F%2Fatendimentoprivado.com&amp;gporigin=https%3A%2F%2Fatendimentoprivado.com%2F&amp;vf=1"></iframe>',
+        content: '<iframe id="embed-bubble-content" class="w-full h-full " src="https://www.youtube-nocookie.com/embed/v6iCFyNdjrI?autoplay=0&amp;controls=0&amp;disablekb=1&amp;playsinline=1&amp;cc_load_policy=0&amp;showinfo=0&amp;modestbranding=0&amp;rel=0&amp;loop=0&amp;fs=0&amp;widget_referrer=https%3A%2F%2Fatendimentoprivado.com%2F&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fiframe.vslplay.com&amp;widgetid=1&amp;forigin=https%3A%2F%2Fiframe.vslplay.com%2F6b899dde-e319-46e4-b5b6-03d4c200c39b&amp;aoriginsup=1&amp;aorigins=https%3A%2F%2Fatendimentoprivado.com%2Chttps%3A%2F%2Fatendimentoprivado.com&amp;gporigin=https%3A%2F%2Fatendimentoprivado.com%2F&amp;vf=1"></iframe>' duration: 30000,
         type_text: 'video'
       },
       {
